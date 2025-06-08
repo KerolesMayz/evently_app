@@ -17,7 +17,7 @@ class EventlyApp extends StatelessWidget {
               theme: ThemeManager.lightTheme,
               darkTheme: ThemeManager.darkTheme,
               onGenerateRoute: RoutesManager.router,
-              initialRoute: RoutesManager.login,
+              initialRoute: RoutesManager.signup,
               themeMode: ThemeMode.system,
               debugShowCheckedModeBanner: false,
             ));

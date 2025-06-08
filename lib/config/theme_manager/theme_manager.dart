@@ -72,6 +72,17 @@ class ThemeManager {
               color: ColorsManager.blue,
               fontWeight: FontWeight.w500,
               fontSize: 20.sp)),
+      appBarTheme: AppBarTheme(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          toolbarHeight: 64.h,
+          foregroundColor: ColorsManager.dark,
+          centerTitle: true,
+          titleTextStyle: GoogleFonts.inter(
+              fontWeight: FontWeight.normal,
+              fontStyle: FontStyle.normal,
+              color: ColorsManager.dark,
+              fontSize: 22)),
       cardTheme: CardTheme(
         margin: EdgeInsets.zero,
         elevation: 0,

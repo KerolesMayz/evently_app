@@ -91,6 +91,34 @@ class ThemeManager {
           borderRadius: BorderRadius.circular(16.r),
           side: const BorderSide(width: 1, color: ColorsManager.blue),
         ),
-      ));
+      ),
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          type: BottomNavigationBarType.fixed,
+          backgroundColor: ColorsManager.blue,
+          elevation: 0,
+          selectedItemColor: ColorsManager.white,
+          unselectedItemColor: ColorsManager.white,
+          showSelectedLabels: true,
+          showUnselectedLabels: true,
+          selectedIconTheme: IconThemeData(
+            color: ColorsManager.white,
+            size: 24.r,
+          ),
+          unselectedIconTheme: IconThemeData(
+            color: ColorsManager.white,
+            size: 20.r,
+          ),
+          selectedLabelStyle:
+              GoogleFonts.inter(fontWeight: FontWeight.w700, fontSize: 12),
+          unselectedLabelStyle:
+              GoogleFonts.inter(fontWeight: FontWeight.w700, fontSize: 12)),
+      floatingActionButtonTheme: FloatingActionButtonThemeData(
+          iconSize: 24.r,
+          backgroundColor: ColorsManager.blue,
+          foregroundColor: ColorsManager.white,
+          elevation: 0,
+          sizeConstraints: BoxConstraints(minWidth: 56.r, minHeight: 56.r),
+          shape: StadiumBorder(
+              side: BorderSide(color: ColorsManager.white, width: 5.r))));
   static final ThemeData darkTheme = ThemeData();
 }

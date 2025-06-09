@@ -1,11 +1,13 @@
 import 'package:evently/core/resources/constants_manager.dart';
-import 'package:evently/core/widgets/custom_tab_bar.dart';
+import 'package:evently/core/widgets/custom_event/custom_event.dart';
+import 'package:evently/data/data_models/event_data_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../core/resources/assets_manager.dart';
 import '../../../../core/resources/colors_manager.dart';
+import '../../../../core/widgets/custom_tab/custom_tab_bar.dart';
 
 class HomeTab extends StatefulWidget {
   const HomeTab({super.key});
@@ -83,14 +85,32 @@ class _HomeTabState extends State<HomeTab> {
                   SizedBox(
                     height: 16.h,
                   ),
-                  CustomTabBar(
+                  const CustomTabBar(
                     categories: ConstantsManager.categories,
                   )
                 ],
               ),
             ),
           ),
-        )
+        ),
+        Expanded(
+            child: ListView.separated(
+                padding: REdgeInsets.symmetric(horizontal: 16),
+                itemBuilder: (context, index) {
+                  return SizedBox(
+                    height: 16.h,
+                  );
+                },
+                separatorBuilder: (context, index) {
+                  return CustomEvent(
+                      event: EventDataModel(
+                          title: 'fdsfsd',
+                          description: 'dsfkjjlkdsjf',
+                          date: DateTime.now(),
+                          time: TimeOfDay.now(),
+                          categoryId: '1'));
+                },
+                itemCount: 5))
       ],
     );
   }

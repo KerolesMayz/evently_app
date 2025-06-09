@@ -45,6 +45,11 @@ class ThemeManager {
             borderRadius: BorderRadius.circular(16.r),
             borderSide: const BorderSide(color: ColorsManager.grey, width: 1),
           )),
+      iconTheme: IconThemeData(color: ColorsManager.white),
+      tabBarTheme: TabBarTheme(
+          indicator: const BoxDecoration(color: Colors.transparent),
+          unselectedLabelColor: Colors.transparent,
+          labelPadding: REdgeInsets.symmetric(horizontal: 5)),
       textButtonTheme: TextButtonThemeData(
           style: TextButton.styleFrom(
               padding: EdgeInsets.zero,
@@ -71,7 +76,19 @@ class ThemeManager {
           displayLarge: GoogleFonts.inter(
               color: ColorsManager.blue,
               fontWeight: FontWeight.w500,
-              fontSize: 20.sp)),
+              fontSize: 20.sp),
+          titleSmall: GoogleFonts.inter(
+              color: ColorsManager.white,
+              fontWeight: FontWeight.w400,
+              fontSize: 14.sp),
+          titleMedium: GoogleFonts.inter(
+              color: ColorsManager.white,
+              fontWeight: FontWeight.w500,
+              fontSize: 16.sp),
+          titleLarge: GoogleFonts.inter(
+              color: ColorsManager.white,
+              fontWeight: FontWeight.w700,
+              fontSize: 24.sp)),
       appBarTheme: AppBarTheme(
           backgroundColor: Colors.transparent,
           elevation: 0,

@@ -10,4 +10,22 @@ class AssetsManager {
   static const String homeOutlined = '$base/Home_outlined.svg';
   static const String person = '$base/Person.svg';
   static const String personOutlined = '$base/Person_outlined.svg';
+  static const String sun = '$base/Sun.svg';
+  static const String enLang = '$base/en.svg';
+  static const String compass = '$base/Compass.svg';
+  static const String sport = '$base/sport.svg';
+  static const String birthday = '$base/birthday.svg';
+}
+
+class CategoriesAssets {
+  static const String base = 'assets/images/categories';
+  static const String sport = '$base/sport.png';
+  static const String birthday = '$base/birthday.png';
+  static const String bookClub = '$base/bookclub.png';
+  static const String exhibition = '$base/exhibiiton.png';
+  static const String gaming = '$base/gaming.png';
+  static const String eating = '$base/eating.png';
+  static const String holiday = '$base/holiday.png';
+  static const String meeting = '$base/meeting.png';
+  static const String workshop = '$base/workshop.png';
 }

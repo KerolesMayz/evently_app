@@ -3,28 +3,30 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../resources/colors_manager.dart';
 
 class CustomTab extends StatelessWidget {
   const CustomTab({
     super.key,
     required this.category,
-    required this.currentIndex,
-  });
+      required this.selectedBackGroundColor,
+      required this.selectedForeGroundColor,
+      required this.unselectedBackGroundColor,
+      required this.unselectedForeGroundColor,
+      required this.isSelected});
 
   final CategoryDataModel category;
-  final int currentIndex;
-
-  Color foreGroundColor() {
-    return currentIndex == int.parse(category.id)
-        ? ColorsManager.blue
-        : ColorsManager.white;
-  }
+  final Color selectedBackGroundColor;
+  final Color selectedForeGroundColor;
+  final Color unselectedBackGroundColor;
+  final Color unselectedForeGroundColor;
+  final bool isSelected;
 
   Color backGroundColor() {
-    return currentIndex == int.parse(category.id)
-        ? ColorsManager.white
-        : Colors.transparent;
+    return isSelected ? selectedBackGroundColor : unselectedBackGroundColor;
+  }
+
+  Color foreGroundColor() {
+    return isSelected ? selectedForeGroundColor : unselectedForeGroundColor;
   }
 
   @override
@@ -32,7 +34,7 @@ class CustomTab extends StatelessWidget {
     return Card(
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(46.r),
-          side: BorderSide(width: 1.w, color: ColorsManager.white)),
+          side: BorderSide(width: 1.w, color: foreGroundColor())),
       color: backGroundColor(),
       child: Padding(
         padding: REdgeInsets.symmetric(horizontal: 16, vertical: 12),

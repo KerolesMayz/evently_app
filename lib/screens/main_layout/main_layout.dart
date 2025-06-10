@@ -1,4 +1,5 @@
 import 'package:evently/core/resources/assets_manager.dart';
+import 'package:evently/core/routes_manager/routes_manager.dart';
 import 'package:evently/screens/main_layout/tabs/home_tab/home_tab.dart';
 import 'package:evently/screens/main_layout/tabs/love_tab/love_tab.dart';
 import 'package:evently/screens/main_layout/tabs/map_tab/map_tab.dart';
@@ -30,7 +31,9 @@ class _MainLayoutState extends State<MainLayout> {
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, RoutesManager.createEvent);
+        },
         child: const Icon(Icons.add),
       ),
       bottomNavigationBar: SizedBox(

@@ -15,6 +15,10 @@ class AssetsManager {
   static const String compass = '$base/Compass.svg';
   static const String sport = '$base/sport.svg';
   static const String birthday = '$base/birthday.svg';
+  static const String calender = '$base/calender.svg';
+  static const String note = '$base/note.svg';
+  static const String time = '$base/time.svg';
+  static const String bookClub = '$base/bookclub.svg';
 }
 
 class CategoriesAssets {

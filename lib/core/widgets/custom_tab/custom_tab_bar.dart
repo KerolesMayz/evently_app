@@ -5,9 +5,20 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'custom_tab.dart';
 
 class CustomTabBar extends StatefulWidget {
-  const CustomTabBar({super.key, required this.categories});
+  const CustomTabBar({
+    super.key,
+    required this.categories,
+    required this.selectedBackGroundColor,
+    required this.selectedForeGroundColor,
+    required this.unselectedBackGroundColor,
+    required this.unselectedForeGroundColor,
+  });
 
   final List<CategoryDataModel> categories;
+  final Color selectedBackGroundColor;
+  final Color selectedForeGroundColor;
+  final Color unselectedBackGroundColor;
+  final Color unselectedForeGroundColor;
 
   @override
   State<CustomTabBar> createState() => _CustomTabBarState();
@@ -30,8 +41,15 @@ class _CustomTabBarState extends State<CustomTabBar> {
             },
             isScrollable: true,
             tabs: widget.categories
-                .map((category) =>
-                    CustomTab(category: category, currentIndex: currentIndex))
+                .map((category) => CustomTab(
+                    isSelected:
+                        widget.categories.indexOf(category) == currentIndex,
+                    category: category,
+                    selectedBackGroundColor: widget.selectedBackGroundColor,
+                    selectedForeGroundColor: widget.selectedForeGroundColor,
+                    unselectedBackGroundColor: widget.unselectedBackGroundColor,
+                    unselectedForeGroundColor:
+                        widget.unselectedForeGroundColor))
                 .toList()));
   }
 }

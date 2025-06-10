@@ -86,8 +86,11 @@ class _HomeTabState extends State<HomeTab> {
                     height: 16.h,
                   ),
                   const CustomTabBar(
-                    categories: ConstantsManager.categories,
-                  )
+                      categories: ConstantsManager.categories,
+                      selectedBackGroundColor: ColorsManager.white,
+                      selectedForeGroundColor: ColorsManager.blue,
+                      unselectedBackGroundColor: ColorsManager.blue,
+                      unselectedForeGroundColor: ColorsManager.white)
                 ],
               ),
             ),

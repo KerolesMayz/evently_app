@@ -12,13 +12,18 @@ class CustomTabBar extends StatefulWidget {
       required this.selectedForeGroundColor,
       required this.unselectedBackGroundColor,
       required this.unselectedForeGroundColor,
+      required this.selectedBorderColor,
+      required this.unselectedBorderColor,
       this.onTap});
 
   final List<CategoryDataModel> categories;
   final Color selectedBackGroundColor;
   final Color selectedForeGroundColor;
+  final Color selectedBorderColor;
   final Color unselectedBackGroundColor;
   final Color unselectedForeGroundColor;
+  final Color unselectedBorderColor;
+
   final void Function(int)? onTap;
 
   @override
@@ -48,6 +53,8 @@ class _CustomTabBarState extends State<CustomTabBar> {
                         widget.categories.indexOf(category) == currentIndex,
                     category: category,
                     selectedBackGroundColor: widget.selectedBackGroundColor,
+                    selectedBorderColor: widget.selectedBorderColor,
+                    unselectedBorderColor: widget.unselectedBorderColor,
                     selectedForeGroundColor: widget.selectedForeGroundColor,
                     unselectedBackGroundColor: widget.unselectedBackGroundColor,
                     unselectedForeGroundColor:

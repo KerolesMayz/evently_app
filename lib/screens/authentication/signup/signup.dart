@@ -98,7 +98,7 @@ class _SignupState extends State<Signup> {
                     height: 16,
                   ),
                   HaveAccount(
-                    question: 'Already Have Account ? ',
+                    question: 'Already Have Account ?',
                     action: 'Login',
                     onActionClick: () {},
                   ),

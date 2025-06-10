@@ -12,6 +12,8 @@ class CustomTab extends StatelessWidget {
       required this.selectedForeGroundColor,
       required this.unselectedBackGroundColor,
       required this.unselectedForeGroundColor,
+      required this.selectedBorderColor,
+      required this.unselectedBorderColor,
       required this.isSelected});
 
   final CategoryDataModel category;
@@ -20,6 +22,8 @@ class CustomTab extends StatelessWidget {
   final Color unselectedBackGroundColor;
   final Color unselectedForeGroundColor;
   final bool isSelected;
+  final Color selectedBorderColor;
+  final Color unselectedBorderColor;
 
   Color backGroundColor() {
     return isSelected ? selectedBackGroundColor : unselectedBackGroundColor;
@@ -29,12 +33,16 @@ class CustomTab extends StatelessWidget {
     return isSelected ? selectedForeGroundColor : unselectedForeGroundColor;
   }
 
+  Color borderColor() {
+    return isSelected ? selectedBorderColor : unselectedBorderColor;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Card(
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(46.r),
-          side: BorderSide(width: 1.w, color: foreGroundColor())),
+          side: BorderSide(width: 1.w, color: borderColor())),
       color: backGroundColor(),
       child: Padding(
         padding: REdgeInsets.symmetric(horizontal: 16, vertical: 12),

@@ -37,7 +37,7 @@ class ProfileTab extends StatelessWidget {
                   const Spacer(),
                   LogoutButton(onPressed: () {}),
                   SizedBox(
-                    height: 10.h,
+                    height: 5.h,
                   )
                 ],
               ),

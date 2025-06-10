@@ -30,7 +30,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      style: Theme.of(context).textTheme.displayMedium,
+      style: Theme.of(context).inputDecorationTheme.hintStyle,
       obscureText: widget.obscureText,
       keyboardType: TextInputType.text,
       cursorColor: ColorsManager.blue,

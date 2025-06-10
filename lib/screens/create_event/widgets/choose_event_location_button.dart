@@ -21,9 +21,9 @@ class ChooseEventLocationButton extends StatelessWidget {
                   color: ColorsManager.blue,
                   child: Padding(
                     padding: REdgeInsets.all(12),
-                    child: const Icon(
+                    child: Icon(
                       Icons.my_location_rounded,
-                      color: ColorsManager.white,
+                      color: Theme.of(context).colorScheme.secondary,
                     ),
                   )),
               const SizedBox(

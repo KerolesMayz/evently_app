@@ -13,7 +13,7 @@ class EventTitleWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.r)),
-        color: ColorsManager.offWhite,
+        color: Theme.of(context).colorScheme.primary,
         child: Padding(
           padding: REdgeInsets.symmetric(horizontal: 8.0),
           child: Row(

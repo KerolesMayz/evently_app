@@ -34,7 +34,7 @@ class _LoginState extends State<Login> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    CustomTextField(
+                    const CustomTextField(
                       labelText: 'Email',
                       hintText: 'Email',
                       prefixIcon: const Icon(EvaIcons.email),

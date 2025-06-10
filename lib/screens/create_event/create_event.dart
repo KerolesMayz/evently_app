@@ -41,7 +41,10 @@ class _CreateEventState extends State<CreateEvent> {
         children: [
           Card(
               margin: REdgeInsets.all(16),
-              color: ColorsManager.dark,
+              color: Theme.of(context).colorScheme.onPrimary,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16),
+                  side: const BorderSide(color: Colors.transparent)),
               child: Image.asset(categories[_currentCategory].imagePath!)),
           CustomTabBar(
               onTap: (index) {
@@ -51,8 +54,11 @@ class _CreateEventState extends State<CreateEvent> {
               },
               categories: categories,
               selectedBackGroundColor: ColorsManager.blue,
-              selectedForeGroundColor: ColorsManager.white,
-              unselectedBackGroundColor: ColorsManager.white,
+              selectedBorderColor: Theme.of(context).colorScheme.secondary,
+              unselectedBorderColor: ColorsManager.blue,
+              selectedForeGroundColor: Theme.of(context).colorScheme.secondary,
+              unselectedBackGroundColor:
+                  Theme.of(context).colorScheme.secondary,
               unselectedForeGroundColor: ColorsManager.blue),
           Expanded(
             child: ListView(
@@ -70,6 +76,9 @@ class _CreateEventState extends State<CreateEvent> {
                     AssetsManager.note,
                     width: 5,
                     height: 5,
+                    colorFilter: ColorFilter.mode(
+                        Theme.of(context).colorScheme.onSecondary,
+                        BlendMode.srcIn),
                     fit: BoxFit.scaleDown,
                   ),
                   hintText: 'Event Title',

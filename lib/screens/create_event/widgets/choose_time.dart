@@ -19,7 +19,11 @@ class ChooseTime extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        SvgPicture.asset(iconPath),
+        SvgPicture.asset(
+          iconPath,
+          colorFilter: ColorFilter.mode(
+              Theme.of(context).colorScheme.onSecondary, BlendMode.srcIn),
+        ),
         SizedBox(
           width: 10.w,
         ),

@@ -23,7 +23,7 @@ class _HomeTabState extends State<HomeTab> {
       children: [
         Container(
           decoration: BoxDecoration(
-              color: ColorsManager.blue,
+              color: Theme.of(context).primaryColor,
               borderRadius:
                   BorderRadius.vertical(bottom: Radius.circular(24.r))),
           child: SafeArea(
@@ -85,12 +85,19 @@ class _HomeTabState extends State<HomeTab> {
                   SizedBox(
                     height: 16.h,
                   ),
-                  const CustomTabBar(
-                      categories: ConstantsManager.categories,
-                      selectedBackGroundColor: ColorsManager.white,
-                      selectedForeGroundColor: ColorsManager.blue,
-                      unselectedBackGroundColor: ColorsManager.blue,
-                      unselectedForeGroundColor: ColorsManager.white)
+                  CustomTabBar(
+                    categories: ConstantsManager.categories,
+                    selectedBackGroundColor:
+                        Theme.of(context).colorScheme.onBackground,
+                    selectedForeGroundColor:
+                        Theme.of(context).colorScheme.onSurface,
+                    unselectedBackGroundColor: Theme.of(context).primaryColor,
+                    unselectedForeGroundColor: ColorsManager.white,
+                    selectedBorderColor:
+                        Theme.of(context).colorScheme.onBackground,
+                    unselectedBorderColor:
+                        Theme.of(context).colorScheme.onBackground,
+                  )
                 ],
               ),
             ),

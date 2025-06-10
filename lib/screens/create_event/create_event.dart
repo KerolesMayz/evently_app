@@ -23,7 +23,7 @@ class CreateEvent extends StatefulWidget {
 class _CreateEventState extends State<CreateEvent> {
   final List<CategoryDataModel> categories = ConstantsManager.categories
       .sublist(1, ConstantsManager.categories.length);
-  final int _currentCategory = 0;
+  int _currentCategory = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -44,6 +44,11 @@ class _CreateEventState extends State<CreateEvent> {
               color: ColorsManager.dark,
               child: Image.asset(categories[_currentCategory].imagePath!)),
           CustomTabBar(
+              onTap: (index) {
+                setState(() {
+                  _currentCategory = index;
+                });
+              },
               categories: categories,
               selectedBackGroundColor: ColorsManager.blue,
               selectedForeGroundColor: ColorsManager.white,

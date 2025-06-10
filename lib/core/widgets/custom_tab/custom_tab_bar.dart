@@ -5,20 +5,21 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'custom_tab.dart';
 
 class CustomTabBar extends StatefulWidget {
-  const CustomTabBar({
-    super.key,
-    required this.categories,
-    required this.selectedBackGroundColor,
-    required this.selectedForeGroundColor,
-    required this.unselectedBackGroundColor,
-    required this.unselectedForeGroundColor,
-  });
+  const CustomTabBar(
+      {super.key,
+      required this.categories,
+      required this.selectedBackGroundColor,
+      required this.selectedForeGroundColor,
+      required this.unselectedBackGroundColor,
+      required this.unselectedForeGroundColor,
+      this.onTap});
 
   final List<CategoryDataModel> categories;
   final Color selectedBackGroundColor;
   final Color selectedForeGroundColor;
   final Color unselectedBackGroundColor;
   final Color unselectedForeGroundColor;
+  final void Function(int)? onTap;
 
   @override
   State<CustomTabBar> createState() => _CustomTabBarState();
@@ -35,6 +36,7 @@ class _CustomTabBarState extends State<CustomTabBar> {
         child: TabBar(
             padding: REdgeInsets.symmetric(horizontal: 16),
             onTap: (value) {
+              widget.onTap != null ? widget.onTap!.call(value) : null;
               setState(() {
                 currentIndex = value;
               });

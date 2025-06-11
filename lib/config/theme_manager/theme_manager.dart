@@ -6,7 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 class ThemeManager {
   static final ThemeData lightTheme = ThemeData(
       primaryColor: ColorsManager.blue,
-      colorScheme: ColorScheme(
+      colorScheme: const ColorScheme(
           brightness: Brightness.light,
           primary: ColorsManager.offWhite,
           onPrimary: ColorsManager.dark,
@@ -26,7 +26,7 @@ class ThemeManager {
           inputDecorationTheme: InputDecorationTheme(
               enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(16.r),
-                  borderSide: BorderSide(color: ColorsManager.blue))),
+                  borderSide: const BorderSide(color: ColorsManager.blue))),
           menuStyle: MenuStyle(
               backgroundColor: MaterialStateProperty.all(ColorsManager.white))),
       scaffoldBackgroundColor: ColorsManager.white,
@@ -150,7 +150,7 @@ class ThemeManager {
       floatingActionButtonTheme: FloatingActionButtonThemeData(iconSize: 24.r, backgroundColor: ColorsManager.blue, foregroundColor: ColorsManager.white, elevation: 0, sizeConstraints: BoxConstraints(minWidth: 56.r, minHeight: 56.r), shape: StadiumBorder(side: BorderSide(color: ColorsManager.white, width: 5.r))));
   static final ThemeData darkTheme = ThemeData(
       primaryColor: ColorsManager.darkBlue,
-      colorScheme: ColorScheme(
+      colorScheme: const ColorScheme(
           brightness: Brightness.dark,
           primary: ColorsManager.darkBlue,
           onPrimary: ColorsManager.darkBlue,
@@ -170,7 +170,7 @@ class ThemeManager {
           inputDecorationTheme: InputDecorationTheme(
               enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(16.r),
-                  borderSide: BorderSide(color: ColorsManager.blue))),
+                  borderSide: const BorderSide(color: ColorsManager.blue))),
           menuStyle: MenuStyle(
               backgroundColor: MaterialStateProperty.all(ColorsManager.white))),
       scaffoldBackgroundColor: ColorsManager.darkBlue,

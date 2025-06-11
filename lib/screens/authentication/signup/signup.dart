@@ -4,6 +4,7 @@ import 'package:evently/core/widgets/custom_text_field.dart';
 import 'package:evently/core/widgets/have_account.dart';
 import 'package:evently/core/widgets/language_switch.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Signup extends StatefulWidget {
@@ -26,7 +27,7 @@ class _SignupState extends State<Signup> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Register'),
+        title: Text(AppLocalizations.of(context)!.register),
         leading: IconButton(
             onPressed: () {},
             icon: Icon(
@@ -44,28 +45,28 @@ class _SignupState extends State<Signup> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  const CustomTextField(
+                  CustomTextField(
                     textInputType: TextInputType.name,
-                    labelText: 'Name',
-                    hintText: 'Name',
-                    prefixIcon: Icon(Icons.person_rounded),
+                    labelText: AppLocalizations.of(context)!.name,
+                    hintText: AppLocalizations.of(context)!.name,
+                    prefixIcon: const Icon(Icons.person_rounded),
                   ),
                   const SizedBox(
                     height: 24,
                   ),
-                  const CustomTextField(
+                  CustomTextField(
                     textInputType: TextInputType.emailAddress,
-                    labelText: 'Email',
-                    hintText: 'Email',
-                    prefixIcon: Icon(Icons.email_rounded),
+                    labelText: AppLocalizations.of(context)!.email,
+                    hintText: AppLocalizations.of(context)!.email,
+                    prefixIcon: const Icon(Icons.email_rounded),
                   ),
                   const SizedBox(
                     height: 16,
                   ),
                   CustomTextField(
                     textInputType: TextInputType.visiblePassword,
-                    labelText: 'Password',
-                    hintText: 'Password',
+                    labelText: AppLocalizations.of(context)!.password,
+                    hintText: AppLocalizations.of(context)!.password,
                     prefixIcon: const Icon(Icons.lock_rounded),
                     suffixIcon: _secure
                         ? const Icon(Icons.visibility_rounded)
@@ -78,8 +79,8 @@ class _SignupState extends State<Signup> {
                   ),
                   CustomTextField(
                     textInputType: TextInputType.visiblePassword,
-                    labelText: 'Re Password',
-                    hintText: 'Re Password',
+                    labelText: AppLocalizations.of(context)!.re_password,
+                    hintText: AppLocalizations.of(context)!.re_password,
                     prefixIcon: const Icon(Icons.lock_rounded),
                     suffixIcon: _secure
                         ? const Icon(Icons.visibility_rounded)
@@ -91,15 +92,16 @@ class _SignupState extends State<Signup> {
                     height: 16,
                   ),
                   CustomButton(
-                    text: 'Create Account',
+                    text: AppLocalizations.of(context)!.create_account,
                     onClick: () {},
                   ),
                   const SizedBox(
                     height: 16,
                   ),
                   HaveAccount(
-                    question: 'Already Have Account ? ',
-                    action: 'Login',
+                    question:
+                        AppLocalizations.of(context)!.already_have_account,
+                    action: AppLocalizations.of(context)!.login,
                     onActionClick: () {},
                   ),
                   const SizedBox(

@@ -1,5 +1,6 @@
 import 'package:evently/core/resources/assets_manager.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -26,7 +27,7 @@ class GoogleLogin extends StatelessWidget {
               Padding(
                 padding: REdgeInsets.only(left: 10),
                 child: Text(
-                  'Login With Google',
+                  AppLocalizations.of(context)!.login_with_google,
                   style: Theme.of(context).textTheme.displayLarge,
                 ),
               )

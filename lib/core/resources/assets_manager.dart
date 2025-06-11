@@ -1,6 +1,7 @@
 class AssetsManager {
   static const String base = 'assets/images';
   static const String logo = '$base/Logo.png';
+  static const String routeLogo = '$base/route_logo.jpg';
   static const String eg = '$base/Egypt.svg';
   static const String en = '$base/Liberta.svg';
   static const String google = '$base/Google.svg';
@@ -15,6 +16,10 @@ class AssetsManager {
   static const String compass = '$base/Compass.svg';
   static const String sport = '$base/sport.svg';
   static const String birthday = '$base/birthday.svg';
+  static const String calender = '$base/calender.svg';
+  static const String note = '$base/note.svg';
+  static const String time = '$base/time.svg';
+  static const String bookClub = '$base/bookclub.svg';
 }
 
 class CategoriesAssets {

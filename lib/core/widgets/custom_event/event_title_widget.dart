@@ -4,16 +4,23 @@ import 'package:icons_plus/icons_plus.dart';
 
 import '../../resources/colors_manager.dart';
 
-class EventTitleWidget extends StatelessWidget {
+class EventTitleWidget extends StatefulWidget {
   const EventTitleWidget({super.key, required this.title});
 
   final String title;
 
   @override
+  State<EventTitleWidget> createState() => _EventTitleWidgetState();
+}
+
+class _EventTitleWidgetState extends State<EventTitleWidget> {
+  bool _isFavorite = false;
+
+  @override
   Widget build(BuildContext context) {
     return Card(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.r)),
-        color: ColorsManager.offWhite,
+        color: Theme.of(context).colorScheme.primary,
         child: Padding(
           padding: REdgeInsets.symmetric(horizontal: 8.0),
           child: Row(
@@ -22,7 +29,7 @@ class EventTitleWidget extends StatelessWidget {
               Expanded(
                   flex: 4,
                   child: Text(
-                    title,
+                    widget.title,
                     softWrap: true,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
@@ -32,9 +39,13 @@ class EventTitleWidget extends StatelessWidget {
                         .copyWith(fontSize: 14.sp, fontWeight: FontWeight.bold),
                   )),
               IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    setState(() {
+                      _isFavorite = !_isFavorite;
+                    });
+                  },
                   icon: Icon(
-                    EvaIcons.heart,
+                    _isFavorite ? EvaIcons.heart : EvaIcons.heart_outline,
                     color: ColorsManager.blue,
                     size: 24.r,
                   ))

@@ -1,3 +1,4 @@
+import 'package:evently/core/resources/colors_manager.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatefulWidget {
@@ -9,15 +10,17 @@ class CustomTextField extends StatefulWidget {
       this.labelText,
       this.obscureText = false,
       this.onClick,
-      this.textInputType});
+      this.textInputType,
+      this.maxLines = 1});
 
-  final Icon? prefixIcon;
-  final Icon? suffixIcon;
+  final Widget? prefixIcon;
+  final Widget? suffixIcon;
   final String? hintText;
   final String? labelText;
   final bool obscureText;
   final VoidCallback? onClick;
   final TextInputType? textInputType;
+  final int maxLines;
 
   @override
   State<CustomTextField> createState() => _CustomTextFieldState();
@@ -27,8 +30,11 @@ class _CustomTextFieldState extends State<CustomTextField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      style: Theme.of(context).inputDecorationTheme.hintStyle,
       obscureText: widget.obscureText,
       keyboardType: TextInputType.text,
+      cursorColor: ColorsManager.blue,
+      maxLines: widget.maxLines,
       decoration: InputDecoration(
           prefixIcon: widget.prefixIcon,
           suffixIcon: widget.suffixIcon != null

@@ -26,7 +26,7 @@ class CustomEvent extends StatelessWidget {
               image: AssetImage(
                 ConstantsManager.categories[2].imagePath!,
               )),
-          color: ColorsManager.dark),
+          color: Theme.of(context).colorScheme.onPrimary),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

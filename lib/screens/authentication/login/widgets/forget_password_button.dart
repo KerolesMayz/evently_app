@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ForgetPasswordButton extends StatelessWidget {
   const ForgetPasswordButton({super.key});
@@ -10,6 +11,6 @@ class ForgetPasswordButton extends StatelessWidget {
         style: TextButton.styleFrom(
           alignment: Alignment.centerRight,
         ),
-        child: const Text('Forget Password ?'));
+        child: Text(AppLocalizations.of(context)!.forget_password));
   }
 }

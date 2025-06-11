@@ -15,7 +15,7 @@ class ConstantsManager {
         id: '2',
         imagePath: CategoriesAssets.birthday),
     CategoryDataModel(
-        svgIconPath: AssetsManager.sport,
+        svgIconPath: AssetsManager.bookClub,
         name: 'BookClub',
         id: '3',
         imagePath: CategoriesAssets.bookClub),

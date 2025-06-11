@@ -2,8 +2,6 @@ import 'package:evently/core/extensions/date_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../resources/colors_manager.dart';
-
 class EventDateWidget extends StatelessWidget {
   const EventDateWidget({super.key, required this.date});
 
@@ -13,7 +11,7 @@ class EventDateWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.r)),
-        color: ColorsManager.offWhite.withOpacity(0.8),
+        color: Theme.of(context).colorScheme.primary.withOpacity(0.8),
         child: Padding(
           padding: REdgeInsets.all(8.0),
           child: Column(

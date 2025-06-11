@@ -13,9 +13,17 @@ class CustomProfileHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Locale currentLocale = Localizations.localeOf(context);
+    String currentLanguageCode = currentLocale.languageCode;
     return Card(
         shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.only(bottomLeft: Radius.circular(64.r))),
+            borderRadius: BorderRadius.only(
+                bottomLeft: currentLanguageCode == 'ar'
+                    ? const Radius.circular(0)
+                    : Radius.circular(64.r),
+                bottomRight: currentLanguageCode == 'ar'
+                    ? Radius.circular(64.r)
+                    : const Radius.circular(0))),
         color: ColorsManager.blue,
         child: SafeArea(
           child: Padding(
@@ -25,10 +33,12 @@ class CustomProfileHeader extends StatelessWidget {
               children: [
                 ClipRRect(
                     borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(24.r),
+                        topLeft: Radius.circular(
+                            currentLanguageCode == 'ar' ? 1000.r : 24.r),
                         bottomLeft: Radius.circular(1000.r),
                         bottomRight: Radius.circular(1000.r),
-                        topRight: Radius.circular(1000.r)),
+                        topRight: Radius.circular(
+                            currentLanguageCode == 'ar' ? 24.r : 1000.r)),
                     child: Image.asset(
                       AssetsManager.routeLogo,
                       width: 124.r,

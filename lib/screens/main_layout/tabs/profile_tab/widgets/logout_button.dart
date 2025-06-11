@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/resources/colors_manager.dart';
@@ -19,7 +20,7 @@ class LogoutButton extends StatelessWidget {
             SizedBox(
               width: 8.w,
             ),
-            const Text('Logout')
+            Text(AppLocalizations.of(context)!.logout)
           ],
         ));
   }

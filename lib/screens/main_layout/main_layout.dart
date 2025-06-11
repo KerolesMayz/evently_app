@@ -5,6 +5,7 @@ import 'package:evently/screens/main_layout/tabs/love_tab/love_tab.dart';
 import 'package:evently/screens/main_layout/tabs/map_tab/map_tab.dart';
 import 'package:evently/screens/main_layout/tabs/profile_tab/profile_tab.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:icons_plus/icons_plus.dart';
@@ -50,15 +51,15 @@ class _MainLayoutState extends State<MainLayout> {
                   width: 20,
                   height: 20,
                 ),
-                label: 'Home'),
-            const BottomNavigationBarItem(
-                icon: Icon(Icons.location_on_outlined),
-                activeIcon: Icon(Icons.location_on),
-                label: 'Map'),
-            const BottomNavigationBarItem(
-                icon: Icon(EvaIcons.heart_outline),
-                activeIcon: Icon(EvaIcons.heart),
-                label: 'Love'),
+                label: AppLocalizations.of(context)!.home),
+            BottomNavigationBarItem(
+                icon: const Icon(Icons.location_on_outlined),
+                activeIcon: const Icon(Icons.location_on),
+                label: AppLocalizations.of(context)!.map),
+            BottomNavigationBarItem(
+                icon: const Icon(EvaIcons.heart_outline),
+                activeIcon: const Icon(EvaIcons.heart),
+                label: AppLocalizations.of(context)!.love),
             BottomNavigationBarItem(
                 icon: SvgPicture.asset(AssetsManager.personOutlined,
                     width: 17, height: 17),
@@ -67,7 +68,7 @@ class _MainLayoutState extends State<MainLayout> {
                   width: 20,
                   height: 20,
                 ),
-                label: 'Profile'),
+                label: AppLocalizations.of(context)!.profile),
           ],
         ),
       ),

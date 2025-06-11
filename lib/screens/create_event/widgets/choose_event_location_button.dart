@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../core/resources/colors_manager.dart';
@@ -29,7 +30,7 @@ class ChooseEventLocationButton extends StatelessWidget {
               const SizedBox(
                 width: 8,
               ),
-              Text('Choose Event Location',
+              Text(AppLocalizations.of(context)!.choose_event_location,
                   style: Theme.of(context)
                       .textTheme
                       .displayLarge!

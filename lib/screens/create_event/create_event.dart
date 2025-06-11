@@ -7,6 +7,7 @@ import 'package:evently/core/widgets/custom_text_field.dart';
 import 'package:evently/screens/create_event/widgets/choose_event_location_button.dart';
 import 'package:evently/screens/create_event/widgets/choose_time.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -30,7 +31,7 @@ class _CreateEventState extends State<CreateEvent> {
     return Scaffold(
       appBar: AppBar(
         foregroundColor: ColorsManager.blue,
-        title: const Text('Create Event'),
+        title: Text(AppLocalizations.of(context)!.create_event),
         titleTextStyle: GoogleFonts.inter(
             color: ColorsManager.blue,
             fontWeight: FontWeight.w400,
@@ -65,7 +66,7 @@ class _CreateEventState extends State<CreateEvent> {
               padding: REdgeInsets.all(16),
               children: [
                 Text(
-                  'Title',
+                  AppLocalizations.of(context)!.title,
                   style: Theme.of(context).textTheme.displayMedium,
                 ),
                 SizedBox(
@@ -81,40 +82,42 @@ class _CreateEventState extends State<CreateEvent> {
                         BlendMode.srcIn),
                     fit: BoxFit.scaleDown,
                   ),
-                  hintText: 'Event Title',
+                  textInputType: TextInputType.text,
+                  hintText: AppLocalizations.of(context)!.event_title,
                 ),
                 SizedBox(
                   height: 16.h,
                 ),
-                Text('Description',
+                Text(AppLocalizations.of(context)!.description,
                     style: Theme.of(context).textTheme.displayMedium),
                 SizedBox(
                   height: 8.h,
                 ),
-                const CustomTextField(
+                CustomTextField(
+                  textInputType: TextInputType.text,
                   maxLines: 3,
-                  hintText: 'Event Description',
+                  hintText: AppLocalizations.of(context)!.event_description,
                 ),
                 SizedBox(
                   height: 16.h,
                 ),
                 ChooseTime(
                     iconPath: AssetsManager.calender,
-                    title: 'Event Date',
-                    action: 'Choose Date',
+                    title: AppLocalizations.of(context)!.event_date,
+                    action: AppLocalizations.of(context)!.choose_date,
                     onActionTap: () {}),
                 SizedBox(
                   height: 16.h,
                 ),
                 ChooseTime(
                     iconPath: AssetsManager.time,
-                    title: 'Event Time',
-                    action: 'Choose Time',
+                    title: AppLocalizations.of(context)!.event_time,
+                    action: AppLocalizations.of(context)!.choose_time,
                     onActionTap: () {}),
                 SizedBox(
                   height: 16.h,
                 ),
-                Text('Location',
+                Text(AppLocalizations.of(context)!.location,
                     style: Theme.of(context).textTheme.displayMedium),
                 SizedBox(
                   height: 8.h,
@@ -124,7 +127,7 @@ class _CreateEventState extends State<CreateEvent> {
                   height: 16.h,
                 ),
                 CustomButton(
-                  text: 'Add Event',
+                  text: AppLocalizations.of(context)!.add_event,
                   onClick: () {},
                 )
               ],

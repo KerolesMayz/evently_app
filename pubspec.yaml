@@ -43,6 +43,7 @@ dependencies:
   flutter_svg: 2.0.10+1
   intl: any
   provider: any
+  introduction_screen: any
   flutter_localizations:
     sdk: flutter
 

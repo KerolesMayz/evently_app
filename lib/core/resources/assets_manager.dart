@@ -20,6 +20,12 @@ class AssetsManager {
   static const String note = '$base/note.svg';
   static const String time = '$base/time.svg';
   static const String bookClub = '$base/bookclub.svg';
+  static const String resetPassword = '$base/reset_password.png';
+  static const String horizontalLogo = '$base/horizontal_logo.png';
+  static const String onboardingFirst = '$base/onboardingFirst.png';
+  static const String onboarding_1 = '$base/onboarding_1.png';
+  static const String onboarding_2 = '$base/onboarding_2.png';
+  static const String onboarding_3 = '$base/onboarding_3.png';
 }
 
 class CategoriesAssets {

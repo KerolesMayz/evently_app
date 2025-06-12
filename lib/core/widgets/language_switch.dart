@@ -3,7 +3,9 @@ import 'package:evently/core/resources/assets_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 
+import '../../providers/config_provider.dart';
 import '../resources/colors_manager.dart';
 
 class LanguageSwitch extends StatefulWidget {
@@ -18,14 +20,22 @@ class _LanguageSwitchState extends State<LanguageSwitch> {
 
   @override
   Widget build(BuildContext context) {
+    ConfigProvider configProvider = Provider.of<ConfigProvider>(context);
     return AnimatedToggleSwitch<int>.rolling(
       current: value,
       values: const [0, 1],
-      style: ToggleStyle(
-          indicatorColor: ColorsManager.blue,
-          borderColor: ColorsManager.blue,
-          borderRadius: BorderRadius.circular(30.r)),
-      onChanged: (i) => setState(() => value = i),
+      style: const ToggleStyle(
+        indicatorColor: ColorsManager.blue,
+        borderColor: ColorsManager.blue,
+      ),
+      onChanged: (i) => setState(() {
+        value = i;
+        if (value == 0) {
+          configProvider.changeAppLanguage(const Locale('en'));
+        } else {
+          configProvider.changeAppLanguage(const Locale('ar'));
+        }
+      }),
       iconBuilder: (i, _) {
         final flag = i == 0 ? AssetsManager.en : AssetsManager.eg;
         return ClipOval(
